@@ -7,13 +7,13 @@
 </ul>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
     <div *ngFor="let boardgame of collection" class="col">
-        <div class="w-100 overflow-hidden boardgame-img-wrapper">
+        <button class="w-100 overflow-hidden boardgame-img-wrapper btn" (click)="onTileClick(boardgame.objectId)">
           <img [src]="boardgame.imgSrc" [alt]="boardgame.title" class="img-thumbnail">
           <div class="boardgame-img-label px-3 py-1">
             <div>{{boardgame.title}}</div>
             <div>{{boardgame.ownerName}}</div>
           </div>
-        </div>
+        </button>
     </div>
   </div>
 </div>

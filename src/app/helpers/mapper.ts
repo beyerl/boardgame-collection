@@ -9,6 +9,7 @@ export class Mapper {
             title: item.name._text,
             imgSrc: item.image._text,
             ownerName: ownerName,
+            objectId: Number(item._attributes.objectid),
             status: this.mapAttributesToBoardgameStatus(item.status._attributes)
         }))
     }

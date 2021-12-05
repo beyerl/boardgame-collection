@@ -71,6 +71,7 @@ export interface ICollectionItemViewModel {
     title: string,
     imgSrc: string,
     ownerName: string,
+    objectId: number
     status: IBoardgameStatus
 }
 

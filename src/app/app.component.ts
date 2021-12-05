@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { BGGService } from './bgg.service';
 import { ICollectionItemViewModel, IBoardgameStatus } from './helpers/mapper.model';
 
@@ -35,5 +36,9 @@ export class AppComponent {
 
   private filterCollection() {
     this.collection = this.collectionCache.filter(boardgame => boardgame.status[this.activeTab] === true);
+  }
+
+  public onTileClick(objectid: number){
+    document.location = (`https://boardgamegeek.com/boardgame/${objectid}`)
   }
 }
