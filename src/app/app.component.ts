@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BGGService } from './bgg.service';
+import { ICollectionItemViewModel, IBoardgameStatus } from './helpers/mapper.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'bgg-collection';
+  public collectionCache: ICollectionItemViewModel[] = [];
+  public collection: ICollectionItemViewModel[] = [];
+  public tabs = [
+    {key: "Im Besitz", value: "own"},
+    {key: "Vormals Besessen", value: "prevowned"},
+    {key: "Wunschliste", value: "wishlist"},
+    {key: "Vorbestellt", value: "preordered"},
+  ]
+
+  public activeTab: string = "own"
+
+  constructor(private bggService: BGGService) {  }
+
+  async ngOnInit() {
+    this.collectionCache = (await this.bggService.getCollectionDataAsync())
+    
+    this.filterCollection()
+  }
+
+  public onNavClick(tabValue: string){
+    this.activeTab = tabValue
+
+    this.filterCollection()
+  }
+
+  private filterCollection() {
+    this.collection = this.collectionCache.filter(boardgame => boardgame.status[this.activeTab] === true);
+  }
 }
