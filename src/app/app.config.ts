@@ -3,5 +3,7 @@ export const appConfig = {
     { name: 'Flo', bggusername: 'flaich' },
     { name: 'Lorenz', bggusername: 'lenzbua' },
     { name: 'Luise', bggusername: 'ikarym' },
+    { name: 'Sabi', bggusername: 'samadabei' },
+    { name: 'Max', bggusername: 'killersbrother' },
   ],
 };

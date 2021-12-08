@@ -5,6 +5,7 @@
     </button>
   </li>
 </ul>
+<div class="px-3">Gesamtzahl Spiele: <b>{{collection?.length}}</b></div>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
     <div *ngFor="let boardgame of collection" class="col">
         <button class="w-100 overflow-hidden boardgame-img-wrapper btn" (click)="onTileClick(boardgame.objectId)">
