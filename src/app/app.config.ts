@@ -5,6 +5,6 @@ export const appConfig = {
     { name: 'Luise', bggusername: 'ikarym' },
     { name: 'Sabi', bggusername: 'samadabei' },
     { name: 'Max', bggusername: 'killersbrother' },
-    { name: 'Jullika', bggusername: 'kakerlake'}
+    { name: 'Julika', bggusername: 'kakerlake'}
   ],
 };
