@@ -6,8 +6,8 @@ export class Mapper {
 
     public static mapBGGCollectionToCollectionViewModel (bggCollection: IBGGCollection, ownerName: string): ICollectionItemViewModel[] {
         return bggCollection.items.item.map(item => ({
-            title: item.name._text,
-            imgSrc: item.image._text,
+            title: item.name?._text,
+            imgSrc: item.image?._text,
             ownerName: ownerName,
             objectId: Number(item._attributes.objectid),
             status: this.mapAttributesToBoardgameStatus(item.status._attributes)
